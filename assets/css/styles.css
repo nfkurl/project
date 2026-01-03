@@ -1,0 +1,345 @@
+:root {
+    --ghana-gold: #FFD700;
+    --ghana-red: #C62828;
+    --ghana-green: #2E7D32;
+    --dark-text: #2D2D2D;
+    --light-bg: #F9F9F9;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: var(--light-bg);
+    color: var(rgb(249, 244, 244) );
+    /* stronger dark overlay + project-root wallpaper (fixed on desktop, scroll on small screens) */
+
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--ghana-gold);
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav a {
+    color: var(--dark-text);
+    font-weight: bold;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--ghana-red);
+}
+
+/* Hero Section */
+.hero {
+    padding: 4rem 10%;
+    background: rgba(255, 255, 255, 0);
+    text-align: center;
+}
+
+.hero h1 {
+    color: var(--ghana-red);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Festival Cards */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.festival-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+/* Gallery — Masonry style using CSS columns */
+.gallery.masonry {
+        column-count: 1;
+        column-gap: 1rem;
+        max-width: 1100px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+}
+
+.masonry-item {
+        display: inline-block;
+        width: 100%;
+        margin: 0 0 1rem;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.masonry-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        vertical-align: middle;
+        transition: transform 0.3s ease;
+}
+
+.masonry-item:hover img {
+        transform: scale(1.02);
+}
+
+.masonry-item figcaption {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.95rem;
+        color: var(--dark-text);
+}
+
+@media (min-width: 600px) {
+    .gallery.masonry { column-count: 2; }
+}
+
+@media (min-width: 1000px) {
+    .gallery.masonry { column-count: 3; }
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.8);
+    z-index: 1200;
+    padding: 2rem;
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox-image {
+    max-width: 95%;
+    max-height: 80vh;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    border-radius: 6px;
+}
+
+.lightbox-caption {
+    margin-top: 1rem;
+    color: #fff;
+    text-align: center;
+    max-width: 900px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Festival cards with thumbnail grids */
+.festival-cards {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+.festival-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.festival-card h3 {
+    margin: 0 0 0.25rem;
+    color: var(--ghana-red);
+}
+
+.festival-card .lead {
+    margin: 0 0 0.75rem;
+    color: #444;
+}
+
+.thumb-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+}
+
+.thumb-grid img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.thumb-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+@media (min-width: 800px) {
+    .festival-cards { grid-template-columns: repeat(2, 1fr); }
+    .thumb-grid img { height: 140px; }
+}
+
+@media (min-width: 1200px) {
+    .festival-cards { grid-template-columns: repeat(3, 1fr); }
+    .thumb-grid img { height: 160px; }
+}
+
+/* Highlighted festival card when navigated via hash */
+.festival-card.active {
+    border: 3px solid var(--ghana-red);
+    box-shadow: 0 12px 30px rgba(198,40,40,0.18);
+    transform: translateY(-6px);
+}
+
+/* Ensure anchor scrolling doesn't hide content behind header */
+:root { --header-offset: 90px; }
+.festival-card { scroll-margin-top: var(--header-offset); }
+
+.card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-media {
+    background: #000;
+    display: block;
+    width: 100%;
+    max-height: 220px;
+    overflow: hidden;
+}
+
+.card-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Contact page styles */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.contact-info {
+    background: white;
+    padding: 1.25rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.contact-info .lead {
+    margin-top: 0;
+    color: #444;
+}
+
+.info-block { margin: 0.75rem 0; }
+.map-placeholder img { width: 100%; border-radius: 4px; display:block; }
+
+@media (max-width: 800px) {
+    /* Background fixed can be heavy on mobile — allow it to scroll */
+    body { background-attachment: scroll; }
+    .hero { padding: 2.5rem 6%; }
+    .container { padding: 1rem; }
+}
+
+.contact-form {
+    background: white;
+    padding: 1.25rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.contact-form label { display:block; font-weight:600; margin-bottom:0.35rem; }
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.contact-form .actions { display:flex; align-items:center; gap:1rem; }
+.btn.primary {
+    background: var(--ghana-red);
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+.btn.primary[disabled] { opacity: 0.6; cursor: default; }
+
+.note { color: #666; font-size: 0.95rem; }
+
+@media (min-width: 900px) {
+    .contact-grid { grid-template-columns: 380px 1fr; }
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--ghana-green);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #333;
+    color: white;
+    margin-top: 4rem;
+}
+/* Update the body to white text */
+body {
+    color: #080808; /* Makes all standard text white */
+}
+
+/* Ensure headings are also white */
+h1, h2, h3, h4 {
+    color: #030303;
+}
+
+/* Optional: Add a text shadow to make it readable over busy images */
+;
+s
