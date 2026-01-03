@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tours - Ghana Festivals</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Ghana Festivals</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+      <nav class="site-nav" id="siteNav">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="festivals.html" class="nav-link">Festivals</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="tours.html" class="nav-link">Tours</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Tours</h1>
+    <p>Filter and choose tours. Prices are illustrative only.</p>
+
+    <section class="tour-controls">
+      <label>Category:
+        <select id="tourCategory">
+          <option value="all">All</option>
+          <option value="coast">Coast</option>
+          <option value="mountain">Mountain</option>
+          <option value="city">City</option>
+          <option value="island">Island</option>
+        </select>
+      </label>
+
+      <label>Max price:
+        <input type="range" id="priceRange" min="50" max="3000" step="10" value="1500">
+        <span id="priceVal">$1500</span>
+      </label>
+    </section>
+
+    <section id="toursList" class="cards">
+      <article class="card tour" data-category="coast" data-price="400">
+        <h3>Coastal Relax — 3 days</h3>
+        <p>Stay in a beachfront guesthouse, sunset cruise and seafood dinner.</p>
+        <div class="meta">Price: $400</div>
+        <div class="card-actions">
+          <button class="btn" onclick="location.href='contact.html'">Book</button>
+          <button class="btn wishlist-add" data-dest="Coastal Relax">Wishlist</button>
+        </div>
+      </article>
+
+      <article class="card tour" data-category="mountain" data-price="850">
+        <h3>Alpine Trek — 5 days</h3>
+        <p>Guided mid-level trek with lodge stays and cultural visits.</p>
+        <div class="meta">Price: $850</div>
+        <div class="card-actions">
+          <button class="btn" onclick="location.href='contact.html'">Book</button>
+          <button class="btn wishlist-add" data-dest="Alpine Trek">Wishlist</button>
+        </div>
+      </article>
+
+      <article class="card tour" data-category="city" data-price="220">
+        <h3>City Highlights — 2 days</h3>
+        <p>Food walks, museum passes and a nightlife guide for an evening.</p>
+        <div class="meta">Price: $220</div>
+        <div class="card-actions">
+          <button class="btn" onclick="location.href='contact.html'">Book</button>
+          <button class="btn wishlist-add" data-dest="City Highlights">Wishlist</button>
+        </div>
+      </article>
+
+      <article class="card tour" data-category="island" data-price="1800">
+        <h3>Island Escape — 7 days</h3>
+        <p>Snorkel, kayak and stay in a private bungalow on a coral atoll.</p>
+        <div class="meta">Price: $1800</div>
+        <div class="card-actions">
+          <button class="btn" onclick="location.href='contact.html'">Book</button>
+          <button class="btn wishlist-add" data-dest="Island Escape">Wishlist</button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Ghana Festivals</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

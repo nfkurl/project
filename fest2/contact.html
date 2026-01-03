@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact - Ghana Festivals</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Ghana Festivals</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="festivals.html">Festivals</a> |
+      <a href="events.html">Events</a> |
+      <a href="gallery.html">Gallery</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container contact-grid">
+      <section class="contact-info">
+        <h2>Contact Us</h2>
+        <p class="lead">We welcome questions from visitors, students and researchers. Reach out and we'll connect you with local hosts and cultural custodians.</p>
+
+        <div class="info-block">
+          <h4>Visit or write</h4>
+          <p>Ghana Festivals Centre<br>Accra, Ghana</p>
+          <p>Email: <a href="mailto:info@ghanafestivals.org">info@ghanafestivals.org</a></p>
+          <p>Phone: <a href="tel:+233000000000">+233 00 000 0000</a></p>
+        </div>
+
+        <div class="info-block">
+          <h4>Opening Hours</h4>
+          <p>Mon–Fri: 9:00 — 17:00<br>Sat: 10:00 — 14:00</p>
+        </div>
+       
+      </section>
+
+      <section class="contact-form">
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="form-row">
+            <label for="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="+233 00 000 0000">
+          </div>
+
+          <div class="form-row">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Brief subject" required>
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Tell us about your question or request" required></textarea>
+          </div>
+
+          <div class="form-row actions">
+            <button type="submit" class="btn primary" id="contactSubmit">Send Message</button>
+            <span id="contactNote" class="note" aria-live="polite"></span>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Ghana Festivals</p>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

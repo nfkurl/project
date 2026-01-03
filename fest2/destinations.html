@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Destinations — Wanderly</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Wanderly</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+      <nav class="site-nav" id="siteNav">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+          <li><a href="tours.html" class="nav-link">Tours</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="wishlist" id="wishlistBtn" title="Wishlist">♡ <span id="wishCount">0</span></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Destinations</h1>
+    <p>Browse destinations and add ones you like to your wishlist.</p>
+
+    <section class="destinations-grid">
+      <!-- Each card uses data attributes for JS interactions -->
+      <article class="dest-card card" data-name="Sunset Coast" data-type="coast" data-duration="3">
+        <div class="dest-thumb" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23ffcc80%22/></svg>')"></div>
+        <h3>Sunset Coast</h3>
+        <p>White sands and calm waters. Perfect for relaxation and coastal hikes.</p>
+        <div class="card-actions">
+          <button class="btn wishlist-add" data-dest="Sunset Coast">Add to wishlist</button>
+          <a class="muted" href="tours.html">See tours →</a>
+        </div>
+      </article>
+
+      <article class="dest-card card" data-name="Mountain Trails" data-type="mountain" data-duration="5">
+        <div class="dest-thumb" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%238de3a7%22/></svg>')"></div>
+        <h3>Mountain Trails</h3>
+        <p>Hike scenic trails, stay in lodges and enjoy alpine views.</p>
+        <div class="card-actions">
+          <button class="btn wishlist-add" data-dest="Mountain Trails">Add to wishlist</button>
+          <a class="muted" href="tours.html">See tours →</a>
+        </div>
+      </article>
+
+      <article class="dest-card card" data-name="City Lights" data-type="city" data-duration="2">
+        <div class="dest-thumb" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%239c84ff%22/></svg>')"></div>
+        <h3>City Lights</h3>
+        <p>Culture, museums, street food and vibrant nightlife.</p>
+        <div class="card-actions">
+          <button class="btn wishlist-add" data-dest="City Lights">Add to wishlist</button>
+          <a class="muted" href="tours.html">See tours →</a>
+        </div>
+      </article>
+
+      <article class="dest-card card" data-name="River Valley" data-type="river" data-duration="4">
+        <div class="dest-thumb" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23a5d6a7%22/></svg>')"></div>
+        <h3>River Valley</h3>
+        <p>Boat trips, local markets and riverside stays.</p>
+        <div class="card-actions">
+          <button class="btn wishlist-add" data-dest="River Valley">Add to wishlist</button>
+          <a class="muted" href="tours.html">See tours →</a>
+        </div>
+      </article>
+
+      <article class="dest-card card" data-name="Desert Dunes" data-type="desert" data-duration="3">
+        <div class="dest-thumb" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23ffd180%22/></svg>')"></div>
+        <h3>Desert Dunes</h3>
+        <p>Stargazing, camel treks and dramatic sunsets.</p>
+        <div class="card-actions">
+          <button class="btn wishlist-add" data-dest="Desert Dunes">Add to wishlist</button>
+          <a class="muted" href="tours.html">See tours →</a>
+        </div>
+      </article>
+
+      <article class="dest-card card" data-name="Island Atoll" data-type="island" data-duration="7">
+        <div class="dest-thumb" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23a7c7ff%22/></svg>')"></div>
+        <h3>Island Atoll</h3>
+        <p>Snorkeling, coral reefs and remote bungalow stays.</p>
+        <div class="card-actions">
+          <button class="btn wishlist-add" data-dest="Island Atoll">Add to wishlist</button>
+          <a class="muted" href="tours.html">See tours →</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="filters">
+      <h3>Filter by duration</h3>
+      <div class="filter-controls">
+        <label><input type="radio" name="duration" value="all" checked> All</label>
+        <label><input type="radio" name="duration" value="<=3"> ≤ 3 days</label>
+        <label><input type="radio" name="duration" value="4-5"> 4–5 days</label>
+        <label><input type="radio" name="duration" value=">=6"> ≥ 6 days</label>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Wanderly</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
